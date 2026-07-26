@@ -1,0 +1,180 @@
+.props-demo {
+  width: min(720px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 72px 0;
+  text-align: left;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.intro {
+  max-width: 640px;
+  font-size: 19px;
+}
+
+.profile-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin: 38px 0 18px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--social-bg);
+  box-shadow: var(--shadow);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: white;
+  background: var(--accent);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.profile-content h2,
+.explanation h2 {
+  margin: 0 0 6px;
+}
+
+.status {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.online {
+  color: #229c5a;
+}
+
+.offline {
+  color: #8b8790;
+}
+
+.card-note {
+  margin: 18px 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+}
+
+.full-props-card {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px dashed var(--accent);
+  border-radius: 16px;
+}
+
+.full-props-card h2 {
+  margin: 0 0 6px;
+}
+
+.props-code {
+  margin-top: 16px;
+  color: var(--text-h);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.spread-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.spread-example h2 {
+  margin: 0 0 6px;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.price-grid div {
+  display: grid;
+  gap: 5px;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--code-bg);
+}
+
+.price-grid small {
+  color: var(--text);
+}
+
+.price-grid strong {
+  color: var(--text-h);
+}
+
+.spread-example pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
+.spread-note {
+  margin-top: 16px;
+}
+
+button {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 7px;
+  color: white;
+  background: var(--accent);
+  font: 600 15px var(--sans);
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.92);
+}
+
+.explanation {
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.explanation ul {
+  margin-bottom: 0;
+  padding-left: 22px;
+}
+
+.explanation li + li {
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .props-demo {
+    padding: 42px 0;
+  }
+
+  .profile-card {
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+}
