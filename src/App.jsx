@@ -5,6 +5,7 @@ import FullPropsCard from "./components/FullPropsCard";
 import ParentEventExample from "./components/ParentEventExample";
 import ProductExample from "./components/ProductExample";
 import ProfileCard from "./components/ProfileCard";
+import NameStateExample from "./components/NameStateExample";
 import StateExample from "./components/StateExample";
 import { demoProduct } from "./data/demoProduct";
 import { createSaleProduct } from "./utils/createSaleProduct";
@@ -45,6 +46,8 @@ function App() {
       <ParentEventExample />
 
       <StateExample />
+
+      <NameStateExample />
 
       <section className="explanation">
         <h2>Props đang có trong ví dụ này</h2>
