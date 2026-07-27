@@ -135,6 +135,159 @@
   margin-top: 16px;
 }
 
+.children-demo {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.children-demo h2 {
+  margin: 0 0 20px;
+}
+
+.children-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.children-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.children-card h3 {
+  margin: 0 0 14px;
+  color: var(--text-h);
+  font: 600 15px var(--mono);
+}
+
+.children-content {
+  padding: 12px;
+  border-radius: 7px;
+  background: var(--accent-bg);
+}
+
+.children-demo pre {
+  overflow-x: auto;
+  margin: 18px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
+.click-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.click-example h2 {
+  margin: 0 0 8px;
+}
+
+.click-intro {
+  max-width: 600px;
+}
+
+.click-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.click-example pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
+.click-warning {
+  margin-top: 16px;
+}
+
+.parent-event-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.parent-event-example h2 {
+  margin: 0 0 8px;
+}
+
+.parent-event-example button {
+  margin: 20px 0;
+}
+
+.parent-event-example pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
+.state-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  background: var(--accent-bg);
+}
+
+.state-example h2 {
+  margin: 0 0 8px;
+}
+
+.state-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.secondary-button {
+  color: var(--text-h);
+  background: var(--code-bg);
+}
+
+.state-example pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
+.state-flow {
+  margin: 20px 0 0;
+  padding-left: 22px;
+}
+
+.state-flow li + li {
+  margin-top: 8px;
+}
+
 button {
   padding: 10px 16px;
   border: 0;
@@ -175,6 +328,10 @@ button:hover {
   }
 
   .price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .children-grid {
     grid-template-columns: 1fr;
   }
 }
