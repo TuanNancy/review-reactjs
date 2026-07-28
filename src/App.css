@@ -343,6 +343,88 @@
   text-align: left;
 }
 
+.student-state-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  background: var(--accent-bg);
+}
+
+.student-state-example h2 {
+  margin: 0 0 8px;
+}
+
+.student-details {
+  margin: 20px 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.student-details p {
+  margin: 8px 0;
+}
+
+.student-state-example pre {
+  overflow-x: auto;
+  margin: 20px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
+.active-button-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.active-button-example h2 {
+  margin: 0 0 8px;
+}
+
+.level-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.level-button {
+  color: var(--text-h);
+  background: var(--code-bg);
+}
+
+.level-button.is-active {
+  color: white;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.selected-level {
+  margin: 20px 0;
+  padding: 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+.active-button-example pre {
+  overflow-x: auto;
+  margin: 20px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
 button {
   padding: 10px 16px;
   border: 0;

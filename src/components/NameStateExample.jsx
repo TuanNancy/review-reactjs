@@ -21,7 +21,7 @@ function NameStateExample() {
         Your name
         <input
           type="text"
-          value={name}
+          // value={name}
           onChange={handleNameChange}
           placeholder="Example: Minh"
         />

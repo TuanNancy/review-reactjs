@@ -1,4 +1,5 @@
 import "./App.css";
+import ActiveButtonExample from "./components/ActiveButtonExample";
 import ChildrenDemo from "./components/ChildrenDemo";
 import ClickExample from "./components/ClickExample";
 import FullPropsCard from "./components/FullPropsCard";
@@ -7,6 +8,7 @@ import ProductExample from "./components/ProductExample";
 import ProfileCard from "./components/ProfileCard";
 import NameStateExample from "./components/NameStateExample";
 import StateExample from "./components/StateExample";
+import StudentStateExample from "./components/StudentStateExample";
 import { demoProduct } from "./data/demoProduct";
 import { createSaleProduct } from "./utils/createSaleProduct";
 
@@ -48,6 +50,10 @@ function App() {
       <StateExample />
 
       <NameStateExample />
+
+      <StudentStateExample />
+
+      <ActiveButtonExample />
 
       <section className="explanation">
         <h2>Props đang có trong ví dụ này</h2>
