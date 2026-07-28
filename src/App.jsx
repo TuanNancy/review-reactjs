@@ -3,6 +3,7 @@ import ActiveButtonExample from "./components/ActiveButtonExample";
 import ChildrenDemo from "./components/ChildrenDemo";
 import ClickExample from "./components/ClickExample";
 import FullPropsCard from "./components/FullPropsCard";
+import ForwardingPropsExample from "./components/ForwardingPropsExample";
 import ParentEventExample from "./components/ParentEventExample";
 import ProductExample from "./components/ProductExample";
 import ProfileCard from "./components/ProfileCard";
@@ -40,6 +41,8 @@ function App() {
 
       <FullPropsCard name="Lan" age={28} isOnline={false} />
 
+      <ForwardingPropsExample />
+
       <ProductExample product={demoProduct} saleProduct={saleProduct} />
 
       <ChildrenDemo />
@@ -60,9 +63,9 @@ function App() {
         <p className="eyebrow">INDEPENDENT COMPONENT</p>
         <h2>StudentRow tự lấy dữ liệu</h2>
         <p>
-          <code>StudentRow</code> đọc trực tiếp{" "}
-          <code>initialStudents[0]</code> từ file dữ liệu. Nó không nhận props
-          từ <code>StudentMapExample</code>.
+          <code>StudentRow</code> đọc trực tiếp <code>initialStudents[0]</code>{" "}
+          từ file dữ liệu. Nó không nhận props từ <code>StudentMapExample</code>
+          .
         </p>
         <ul className="student-list">
           <StudentRow />
@@ -71,6 +74,7 @@ function App() {
 
       <StudentMapExample />
 
+      <ForwardingPropsExample />
       <section className="explanation">
         <h2>Props đang có trong ví dụ này</h2>
         <ul>
