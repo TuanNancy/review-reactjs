@@ -425,6 +425,69 @@
   text-align: left;
 }
 
+.student-map-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.student-map-example h2 {
+  margin: 0 0 8px;
+}
+
+.student-list {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.student-row {
+  display: grid;
+  grid-template-columns: 1fr minmax(160px, 0.8fr) auto;
+  align-items: end;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.student-row p {
+  margin: 5px 0 0;
+}
+
+.student-row label {
+  display: grid;
+  gap: 6px;
+  color: var(--text-h);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.student-row input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text-h);
+  background: var(--bg);
+  font: 14px var(--sans);
+}
+
+.student-map-example pre {
+  overflow-x: auto;
+  margin: 20px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
 button {
   padding: 10px 16px;
   border: 0;
@@ -470,5 +533,10 @@ button:hover {
 
   .children-grid {
     grid-template-columns: 1fr;
+  }
+
+  .student-row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
   }
 }

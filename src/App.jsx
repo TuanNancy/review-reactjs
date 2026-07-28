@@ -9,6 +9,7 @@ import ProfileCard from "./components/ProfileCard";
 import NameStateExample from "./components/NameStateExample";
 import StateExample from "./components/StateExample";
 import StudentStateExample from "./components/StudentStateExample";
+import StudentMapExample, { StudentRow } from "./components/StudentMapExample";
 import { demoProduct } from "./data/demoProduct";
 import { createSaleProduct } from "./utils/createSaleProduct";
 
@@ -54,6 +55,21 @@ function App() {
       <StudentStateExample />
 
       <ActiveButtonExample />
+
+      <section className="student-map-example">
+        <p className="eyebrow">INDEPENDENT COMPONENT</p>
+        <h2>StudentRow tự lấy dữ liệu</h2>
+        <p>
+          <code>StudentRow</code> đọc trực tiếp{" "}
+          <code>initialStudents[0]</code> từ file dữ liệu. Nó không nhận props
+          từ <code>StudentMapExample</code>.
+        </p>
+        <ul className="student-list">
+          <StudentRow />
+        </ul>
+      </section>
+
+      <StudentMapExample />
 
       <section className="explanation">
         <h2>Props đang có trong ví dụ này</h2>
