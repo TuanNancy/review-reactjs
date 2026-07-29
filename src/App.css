@@ -567,6 +567,74 @@
   margin-top: 8px;
 }
 
+.context-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  background: var(--accent-bg);
+}
+
+.context-example h2 {
+  margin: 0 0 8px;
+}
+
+.context-comparison {
+  display: grid;
+  gap: 14px;
+  margin: 20px 0 16px;
+}
+
+.context-method {
+  padding: 18px;
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.context-method h3 {
+  margin: 0 0 6px;
+  color: var(--text-h);
+}
+
+.context-flow {
+  color: var(--text);
+  font: 14px var(--mono);
+}
+
+.context-dashboard {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  background: var(--code-bg);
+}
+
+.context-greeting {
+  display: grid;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+.context-greeting p {
+  color: var(--text);
+}
+
+.context-example pre {
+  overflow-x: auto;
+  margin: 20px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
 .student-map-example {
   margin: 28px 0;
   padding: 26px 28px;

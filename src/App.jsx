@@ -12,6 +12,7 @@ import StateExample from "./components/StateExample";
 import StudentStateExample from "./components/StudentStateExample";
 import StudentMapExample, { StudentRow } from "./components/StudentMapExample";
 import UseEffectExample from "./components/UseEffectExample";
+import UseContextExample from "./components/UseContextExample";
 import { demoProduct } from "./data/demoProduct";
 import { createSaleProduct } from "./utils/createSaleProduct";
 
@@ -29,6 +30,7 @@ function App() {
           <code>ProfileCard</code> là component con.
         </p>
       </header>
+      <UseContextExample />
       <UseEffectExample />
 
       <ProfileCard name="Minh" age={22} isOnline={true}>
