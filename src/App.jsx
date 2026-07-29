@@ -11,6 +11,7 @@ import NameStateExample from "./components/NameStateExample";
 import StateExample from "./components/StateExample";
 import StudentStateExample from "./components/StudentStateExample";
 import StudentMapExample, { StudentRow } from "./components/StudentMapExample";
+import UseEffectExample from "./components/UseEffectExample";
 import { demoProduct } from "./data/demoProduct";
 import { createSaleProduct } from "./utils/createSaleProduct";
 
@@ -28,6 +29,7 @@ function App() {
           <code>ProfileCard</code> là component con.
         </p>
       </header>
+      <UseEffectExample />
 
       <ProfileCard name="Minh" age={22} isOnline={true}>
         <strong>children prop:</strong> Nội dung này được truyền từ App vào giữa

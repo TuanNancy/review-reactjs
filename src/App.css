@@ -498,6 +498,75 @@
   text-align: left;
 }
 
+.effect-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  background: var(--accent-bg);
+}
+
+.effect-example h2,
+.effect-example h3 {
+  margin: 0 0 8px;
+}
+
+.effect-panel {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.effect-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.effect-result {
+  margin: 16px 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+.effect-note {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.effect-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.effect-actions .is-active {
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.effect-example pre {
+  overflow-x: auto;
+  margin: 20px 0 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
+.effect-flow {
+  margin: 18px 0 0;
+  padding-left: 22px;
+}
+
+.effect-flow li + li {
+  margin-top: 8px;
+}
+
 .student-map-example {
   margin: 28px 0;
   padding: 26px 28px;
