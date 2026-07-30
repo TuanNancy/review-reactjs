@@ -14,6 +14,7 @@ import StudentMapExample, { StudentRow } from "./components/StudentMapExample";
 import UseEffectExample from "./components/UseEffectExample";
 import UseContextExample from "./components/UseContextExample";
 import UseRefExample from "./components/UseRefExample";
+import UseReducerCounterExample from "./components/UseReducerCounterExample";
 import { demoProduct } from "./data/demoProduct";
 import { createSaleProduct } from "./utils/createSaleProduct";
 
@@ -31,6 +32,7 @@ function App() {
           <code>ProfileCard</code> là component con.
         </p>
       </header>
+      <UseReducerCounterExample />
       <UseRefExample />
       <UseContextExample />
       <UseEffectExample />

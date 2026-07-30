@@ -361,6 +361,64 @@
   margin-top: 8px;
 }
 
+.reducer-example {
+  margin: 28px 0;
+  padding: 26px 28px;
+  border: 1px solid var(--accent);
+  border-radius: 16px;
+  background: var(--accent-bg);
+}
+
+.reducer-example h2 {
+  margin: 0 0 8px;
+}
+
+.reducer-counter {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.reducer-counter span {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.reducer-counter strong {
+  color: var(--accent);
+  font-size: 42px;
+  line-height: 1;
+}
+
+.reducer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reducer-flow {
+  margin: 20px 0;
+  padding: 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg);
+}
+
+.reducer-example pre {
+  overflow-x: auto;
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 14px/1.55 var(--mono);
+  text-align: left;
+}
+
 .name-state-example {
   margin: 28px 0;
   padding: 26px 28px;
