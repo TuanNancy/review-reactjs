@@ -708,6 +708,28 @@
   font-family: var(--mono);
 }
 
+.ref-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.ref-compare-grid div {
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.ref-compare-grid h4 {
+  margin: 0 0 8px;
+  color: var(--text-h);
+}
+
+.ref-compare-grid p + p {
+  margin-top: 8px;
+}
+
 .ref-actions {
   display: flex;
   flex-wrap: wrap;
@@ -845,6 +867,10 @@ button:hover {
   }
 
   .ref-values {
+    grid-template-columns: 1fr;
+  }
+
+  .ref-compare-grid {
     grid-template-columns: 1fr;
   }
 

@@ -97,6 +97,73 @@ function SilentValueExample() {
   );
 }
 
+function StateVsRefDomExample() {
+  const [name, setName] = useState("");
+  const inputRef = useRef(null);
+
+  function handleNameChange(event) {
+    setName(event.target.value);
+  }
+
+  function focusInput() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <article className="ref-panel">
+      <h3>3. So sánh useState và useRef với DOM node</h3>
+      <p>
+        Cùng một ô input này dùng cả hai Hook, nhưng mỗi Hook giữ một loại dữ liệu khác nhau.
+      </p>
+
+      <label className="ref-input-label">
+        Nhập tên
+        <input
+          ref={inputRef}
+          type="text"
+          value={name}
+          onChange={handleNameChange}
+          placeholder="Gõ tên của bạn"
+        />
+      </label>
+
+      <div className="ref-compare-grid">
+        <div>
+          <h4>useState giữ dữ liệu giao diện</h4>
+          <p>
+            <code>name</code> đang là: <strong>{name || "chưa có tên"}</strong>
+          </p>
+          <p>
+            Khi gõ, <code>setName(...)</code> chạy. State đổi nên React render lại dòng này.
+          </p>
+        </div>
+        <div>
+          <h4>useRef giữ DOM node</h4>
+          <p>
+            <code>inputRef.current</code> trỏ đến chính ô input ở trên.
+          </p>
+          <p>
+            Dùng ref để gọi hàm DOM như <code>focus()</code>, không phải để hiển thị tên.
+          </p>
+        </div>
+      </div>
+
+      <button type="button" onClick={focusInput}>
+        Dùng ref để focus vào input
+      </button>
+
+      <ol className="ref-steps">
+        <li>
+          Gõ chữ: <code>onChange</code> gọi <code>setName</code> → state đổi → React render lại.
+        </li>
+        <li>
+          Bấm nút: <code>inputRef.current.focus()</code> → trình duyệt focus DOM node ngay lập tức.
+        </li>
+      </ol>
+    </article>
+  );
+}
+
 function UseRefExample() {
   return (
     <section className="ref-example">
@@ -110,6 +177,7 @@ function UseRefExample() {
 
       <FocusInputExample />
       <SilentValueExample />
+      <StateVsRefDomExample />
     </section>
   );
 }
