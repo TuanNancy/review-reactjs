@@ -15,6 +15,7 @@ import UseEffectExample from "./components/UseEffectExample";
 import UseContextExample from "./components/UseContextExample";
 import UseRefExample from "./components/UseRefExample";
 import UseReducerCounterExample from "./components/UseReducerCounterExample";
+import MemoCallbackComparison from "./components/MemoCallbackComparison";
 import { demoProduct } from "./data/demoProduct";
 import { createSaleProduct } from "./utils/createSaleProduct";
 
@@ -33,6 +34,7 @@ function App() {
         </p>
       </header>
       <UseReducerCounterExample />
+      <MemoCallbackComparison />
       <UseRefExample />
       <UseContextExample />
       <UseEffectExample />
