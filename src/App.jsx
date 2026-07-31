@@ -33,8 +33,8 @@ function App() {
           <code>ProfileCard</code> là component con.
         </p>
       </header>
-      <UseReducerCounterExample />
       <MemoCallbackComparison />
+      <UseReducerCounterExample />
       <UseRefExample />
       <UseContextExample />
       <UseEffectExample />

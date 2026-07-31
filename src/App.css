@@ -459,6 +459,21 @@
   background: var(--bg);
 }
 
+.memo-callback-example > button {
+  margin-top: 18px;
+}
+
+.memo-callback-example > pre {
+  overflow-x: auto;
+  margin: 18px 0 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #17151d;
+  color: #e9d5ff;
+  font: 13px/1.55 var(--mono);
+  text-align: left;
+}
+
 .memo-search-box {
   display: grid;
   gap: 8px;
@@ -496,6 +511,15 @@
 
 .memo-result li + li {
   margin-top: 5px;
+}
+
+.memo-steps {
+  margin: 18px 0 0;
+  padding-left: 22px;
+}
+
+.memo-steps li + li {
+  margin-top: 9px;
 }
 
 .memo-comparison-grid {
