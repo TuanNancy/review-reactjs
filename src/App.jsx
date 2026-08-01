@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function HomePage() {
@@ -67,6 +67,10 @@ function CarPage() {
   );
 }
 
+function navLinkClassName({ isActive }) {
+  return `basic-router-link${isActive ? " is-active" : ""}`;
+}
+
 function VehiclesLayout() {
   return (
     <section className="basic-router-card">
@@ -79,9 +83,15 @@ function VehiclesLayout() {
       </p>
 
       <nav className="basic-router-nav" aria-label="Điều hướng xe cộ">
-        <Link to="/vehicles">Tổng quan</Link>
-        <Link to="/vehicles/bike">Bike</Link>
-        <Link to="/vehicles/car">Car</Link>
+        <NavLink className={navLinkClassName} end to="/vehicles">
+          Tổng quan
+        </NavLink>
+        <NavLink className={navLinkClassName} end to="/vehicles/bike">
+          Bike
+        </NavLink>
+        <NavLink className={navLinkClassName} end to="/vehicles/car">
+          Car
+        </NavLink>
       </nav>
 
       <Outlet />
@@ -101,10 +111,20 @@ function Layout() {
       </header>
 
       <nav className="basic-router-nav" aria-label="Điều hướng chính">
-        <Link to="/">Trang chủ</Link>
-        <Link to="/about">Giới thiệu</Link>
-        <Link to="/vehicles">Xe cộ</Link>
+        <NavLink className={navLinkClassName} end to="/">
+          Trang chủ
+        </NavLink>
+        <NavLink className={navLinkClassName} end to="/about">
+          Giới thiệu
+        </NavLink>
+        <NavLink className={navLinkClassName} end to="/vehicles">
+          Xe cộ
+        </NavLink>
       </nav>
+      <p className="basic-router-active-note">
+        Link có nền tím là <code>NavLink</code> đang active, vì URL hiện tại khớp
+        với giá trị <code>to</code> của nó.
+      </p>
 
       <section className="basic-router-card">
         <p className="eyebrow">ROUTE CHA: /</p>

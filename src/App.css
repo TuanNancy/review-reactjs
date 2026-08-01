@@ -1106,13 +1106,29 @@ button:hover {
   margin: 28px 0;
 }
 
-.basic-router-nav a {
+.basic-router-link {
   padding: 10px 16px;
+  border: 1px solid var(--border);
   border-radius: 7px;
-  color: white;
-  background: var(--accent);
+  color: var(--text-h);
+  background: var(--code-bg);
   text-decoration: none;
   font-weight: 600;
+}
+
+.basic-router-link:hover {
+  border-color: var(--accent);
+}
+
+.basic-router-link.is-active {
+  border-color: var(--accent);
+  color: white;
+  background: var(--accent);
+}
+
+.basic-router-active-note {
+  margin: -14px 0 28px;
+  font-size: 14px;
 }
 
 .basic-router-card {
