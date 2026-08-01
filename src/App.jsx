@@ -1,10 +1,12 @@
 import {
   BrowserRouter,
+  Link,
   NavLink,
   Outlet,
   Route,
   Routes,
   useParams,
+  useSearchParams,
 } from "react-router-dom";
 import "./App.css";
 
@@ -42,14 +44,75 @@ function AboutPage() {
 }
 
 function VehiclesHomePage() {
+  const [searchParams] = useSearchParams();
+  const selectedType = searchParams.get("type");
+  const visibleVehicles = selectedType
+    ? vehicles.filter((vehicle) => vehicle.slug === selectedType)
+    : vehicles;
+
   return (
     <section className="basic-router-card">
       <p className="eyebrow">TRANG XE CỘ: URL LÀ /vehicles</p>
-      <h2>React Router đang hiển thị VehiclesHomePage</h2>
+      <h2>Query parameter lọc danh sách xe</h2>
       <p>
-        Đây là index route của <code>VehiclesLayout</code>. Hãy chọn Bike, Car
-        hoặc Truck ở menu ngay phía trên để truyền một URL parameter.
+        Các link dưới đây đều giữ route <code>/vehicles</code>. Chỉ phần sau dấu
+        <code>?</code> thay đổi, ví dụ <code>/vehicles?type=car</code>.
       </p>
+
+      <nav className="basic-router-nav" aria-label="Lọc xe theo query parameter">
+        <Link className={queryLinkClassName(selectedType, null)} to="/vehicles">
+          Tất cả
+        </Link>
+        <Link
+          className={queryLinkClassName(selectedType, "bike")}
+          to="/vehicles?type=bike"
+        >
+          Bike
+        </Link>
+        <Link
+          className={queryLinkClassName(selectedType, "car")}
+          to="/vehicles?type=car"
+        >
+          Car
+        </Link>
+        <Link
+          className={queryLinkClassName(selectedType, "truck")}
+          to="/vehicles?type=truck"
+        >
+          Truck
+        </Link>
+        <Link
+          className={queryLinkClassName(selectedType, "plane")}
+          to="/vehicles?type=plane"
+        >
+          Không có dữ liệu
+        </Link>
+      </nav>
+
+      <p>
+        <code>searchParams.get("type")</code> trả về: <strong>{selectedType ?? "null"}</strong>
+      </p>
+      <pre className="basic-router-code">
+        {"const [searchParams] = useSearchParams();\nconst selectedType = searchParams.get(\"type\");"}
+      </pre>
+
+      {visibleVehicles.length > 0 ? (
+        <ul className="basic-router-list">
+          {visibleVehicles.map((vehicle) => (
+            <li key={vehicle.slug}>
+              <strong>{vehicle.name}</strong> ({vehicle.type}) -{" "}
+              <Link to={`/vehicles/${vehicle.slug}`}>
+                Xem chi tiết qua URL parameter
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>
+          Query <code>type={selectedType}</code> hợp lệ về mặt URL, nhưng không có xe
+          nào trong dữ liệu phù hợp.
+        </p>
+      )}
     </section>
   );
 }
@@ -92,6 +155,10 @@ function VehicleDetailPage() {
 
 function navLinkClassName({ isActive }) {
   return `basic-router-link${isActive ? " is-active" : ""}`;
+}
+
+function queryLinkClassName(selectedType, type) {
+  return `basic-router-link${selectedType === type ? " is-active" : ""}`;
 }
 
 function VehiclesLayout() {
