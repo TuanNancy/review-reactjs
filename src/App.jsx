@@ -45,9 +45,9 @@ function AboutPage() {
 
 function VehiclesHomePage() {
   const [searchParams] = useSearchParams();
-  const selectedType = searchParams.get("type");
-  const visibleVehicles = selectedType
-    ? vehicles.filter((vehicle) => vehicle.slug === selectedType)
+  const selectedSlug = searchParams.get("slug");
+  const visibleVehicles = selectedSlug
+    ? vehicles.filter((vehicle) => vehicle.slug === selectedSlug)
     : vehicles;
 
   return (
@@ -56,44 +56,44 @@ function VehiclesHomePage() {
       <h2>Query parameter lọc danh sách xe</h2>
       <p>
         Các link dưới đây đều giữ route <code>/vehicles</code>. Chỉ phần sau dấu
-        <code>?</code> thay đổi, ví dụ <code>/vehicles?type=car</code>.
+        <code>?</code> thay đổi, ví dụ <code>/vehicles?slug=car</code>.
       </p>
 
       <nav className="basic-router-nav" aria-label="Lọc xe theo query parameter">
-        <Link className={queryLinkClassName(selectedType, null)} to="/vehicles">
+        <Link className={queryLinkClassName(selectedSlug, null)} to="/vehicles">
           Tất cả
         </Link>
         <Link
-          className={queryLinkClassName(selectedType, "bike")}
-          to="/vehicles?type=bike"
+          className={queryLinkClassName(selectedSlug, "bike")}
+          to="/vehicles?slug=bike"
         >
           Bike
         </Link>
         <Link
-          className={queryLinkClassName(selectedType, "car")}
-          to="/vehicles?type=car"
+          className={queryLinkClassName(selectedSlug, "car")}
+          to="/vehicles?slug=car"
         >
           Car
         </Link>
         <Link
-          className={queryLinkClassName(selectedType, "truck")}
-          to="/vehicles?type=truck"
+          className={queryLinkClassName(selectedSlug, "truck")}
+          to="/vehicles?slug=truck"
         >
           Truck
         </Link>
         <Link
-          className={queryLinkClassName(selectedType, "plane")}
-          to="/vehicles?type=plane"
+          className={queryLinkClassName(selectedSlug, "plane")}
+          to="/vehicles?slug=plane"
         >
           Không có dữ liệu
         </Link>
       </nav>
 
       <p>
-        <code>searchParams.get("type")</code> trả về: <strong>{selectedType ?? "null"}</strong>
+        <code>searchParams.get("slug")</code> trả về: <strong>{selectedSlug ?? "null"}</strong>
       </p>
       <pre className="basic-router-code">
-        {"const [searchParams] = useSearchParams();\nconst selectedType = searchParams.get(\"type\");"}
+        {"const [searchParams] = useSearchParams();\nconst selectedSlug = searchParams.get(\"slug\");"}
       </pre>
 
       {visibleVehicles.length > 0 ? (
@@ -109,7 +109,7 @@ function VehiclesHomePage() {
         </ul>
       ) : (
         <p>
-          Query <code>type={selectedType}</code> hợp lệ về mặt URL, nhưng không có xe
+          Query <code>slug={selectedSlug}</code> hợp lệ về mặt URL, nhưng không có xe
           nào trong dữ liệu phù hợp.
         </p>
       )}
@@ -157,8 +157,8 @@ function navLinkClassName({ isActive }) {
   return `basic-router-link${isActive ? " is-active" : ""}`;
 }
 
-function queryLinkClassName(selectedType, type) {
-  return `basic-router-link${selectedType === type ? " is-active" : ""}`;
+function queryLinkClassName(selectedSlug, slug) {
+  return `basic-router-link${selectedSlug === slug ? " is-active" : ""}`;
 }
 
 function VehiclesLayout() {
