@@ -1,5 +1,18 @@
-import { BrowserRouter, NavLink, Outlet, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  NavLink,
+  Outlet,
+  Route,
+  Routes,
+  useParams,
+} from "react-router-dom";
 import "./App.css";
+
+const vehicles = [
+  { slug: "bike", name: "Bike", type: "Xe đạp" },
+  { slug: "car", name: "Car", type: "Ô tô" },
+  { slug: "truck", name: "Truck", type: "Xe tải" },
+];
 
 function HomePage() {
   return (
@@ -34,35 +47,45 @@ function VehiclesHomePage() {
       <p className="eyebrow">TRANG XE CỘ: URL LÀ /vehicles</p>
       <h2>React Router đang hiển thị VehiclesHomePage</h2>
       <p>
-        Đây là index route của <code>VehiclesLayout</code>. Hãy chọn Bike hoặc
-        Car ở menu ngay phía trên để mở route con.
+        Đây là index route của <code>VehiclesLayout</code>. Hãy chọn Bike, Car
+        hoặc Truck ở menu ngay phía trên để truyền một URL parameter.
       </p>
     </section>
   );
 }
 
-function BikePage() {
-  return (
-    <section className="basic-router-card">
-      <p className="eyebrow">URL LÀ /vehicles/bike</p>
-      <h2>BikePage xuất hiện trong Outlet thứ hai</h2>
-      <p>
-        <code>bike</code> là path con của <code>vehicles</code>, nên URL hoàn
-        chỉnh là <code>/vehicles/bike</code>.
-      </p>
-    </section>
-  );
-}
+function VehicleDetailPage() {
+  const { vehicleName } = useParams();
+  const vehicle = vehicles.find((item) => item.slug === vehicleName);
 
-function CarPage() {
+  if (!vehicle) {
+    return (
+      <section className="basic-router-card">
+        <p className="eyebrow">URL PARAMETER: {vehicleName}</p>
+        <h2>Route khớp, nhưng không có dữ liệu xe</h2>
+        <p>
+          Route <code>:vehicleName</code> vẫn khớp URL này. Tuy nhiên, dữ liệu
+          không có xe với slug <code>{vehicleName}</code>. Ứng dụng thật thường
+          hiển thị trang 404 hoặc nút quay lại ở trường hợp này.
+        </p>
+      </section>
+    );
+  }
+
   return (
     <section className="basic-router-card">
-      <p className="eyebrow">URL LÀ /vehicles/car</p>
-      <h2>CarPage xuất hiện trong Outlet thứ hai</h2>
+      <p className="eyebrow">URL PARAMETER: vehicleName = {vehicleName}</p>
+      <h2>{vehicle.name} được render bởi VehicleDetailPage</h2>
       <p>
-        <code>car</code> là path con của <code>vehicles</code>, nên URL hoàn
-        chỉnh là <code>/vehicles/car</code>.
+        Một component này xử lý cả Bike, Car và Truck. Giá trị{" "}
+        <code>{vehicleName}</code> từ URL được dùng để tìm dữ liệu xe:{" "}
+        <strong>{vehicle.type}</strong>.
       </p>
+      <pre className="basic-router-code">
+        {
+          "const { vehicleName } = useParams();\nconst vehicle = vehicles.find((item) => item.slug === vehicleName);"
+        }
+      </pre>
     </section>
   );
 }
@@ -78,7 +101,7 @@ function VehiclesLayout() {
       <h2>VehiclesLayout có Outlet riêng</h2>
       <p>
         <code>VehiclesLayout</code> đã được render vào <code>Outlet</code> của{" "}
-        <code>Layout</code>. Bây giờ Bike hoặc Car sẽ được render vào{" "}
+        <code>Layout</code>. Bây giờ VehicleDetailPage sẽ được render vào{" "}
         <code>Outlet</code> bên dưới.
       </p>
 
@@ -92,6 +115,12 @@ function VehiclesLayout() {
         <NavLink className={navLinkClassName} end to="/vehicles/car">
           Car
         </NavLink>
+        <NavLink className={navLinkClassName} end to="/vehicles/truck">
+          Truck
+        </NavLink>
+        <NavLink className={navLinkClassName} end to="/vehicles/plane">
+          Không có dữ liệu
+        </NavLink>
       </nav>
 
       <Outlet />
@@ -103,8 +132,8 @@ function Layout() {
   return (
     <main className="basic-router">
       <header>
-        <p className="eyebrow">REACT ROUTER: BÀI 2</p>
-        <h1>Nested Routes và Outlet</h1>
+        <p className="eyebrow">REACT ROUTER: BÀI 3</p>
+        <h1>URL Parameters với Nested Routes</h1>
         <p className="intro">
           <code>Layout</code> là route cha. Các trang bên dưới là route con.
         </p>
@@ -122,8 +151,8 @@ function Layout() {
         </NavLink>
       </nav>
       <p className="basic-router-active-note">
-        Link có nền tím là <code>NavLink</code> đang active, vì URL hiện tại khớp
-        với giá trị <code>to</code> của nó.
+        Link có nền tím là <code>NavLink</code> đang active, vì URL hiện tại
+        khớp với giá trị <code>to</code> của nó.
       </p>
 
       <section className="basic-router-card">
@@ -137,7 +166,7 @@ function Layout() {
         </p>
         <pre className="basic-router-code">
           {
-            '<Route path="/" element={<Layout />}>\n  <Route index element={<HomePage />} />\n  <Route path="about" element={<AboutPage />} />\n  <Route path="vehicles" element={<VehiclesLayout />}>\n    <Route index element={<VehiclesHomePage />} />\n    <Route path="bike" element={<BikePage />} />\n    <Route path="car" element={<CarPage />} />\n  </Route>\n</Route>'
+            '<Route path="/" element={<Layout />}>\n  <Route index element={<HomePage />} />\n  <Route path="about" element={<AboutPage />} />\n  <Route path="vehicles" element={<VehiclesLayout />}>\n    <Route index element={<VehiclesHomePage />} />\n    <Route path=":vehicleName" element={<VehicleDetailPage />} />\n  </Route>\n</Route>'
           }
         </pre>
       </section>
@@ -156,8 +185,7 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="vehicles" element={<VehiclesLayout />}>
             <Route index element={<VehiclesHomePage />} />
-            <Route path="bike" element={<BikePage />} />
-            <Route path="car" element={<CarPage />} />
+            <Route path=":vehicleName" element={<VehicleDetailPage />} />
           </Route>
         </Route>
       </Routes>
