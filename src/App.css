@@ -1091,3 +1091,45 @@ button:hover {
     align-items: stretch;
   }
 }
+
+.basic-router {
+  width: min(720px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 72px 0;
+  text-align: left;
+}
+
+.basic-router-nav {
+  display: flex;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.basic-router-nav a {
+  padding: 10px 16px;
+  border-radius: 7px;
+  color: white;
+  background: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.basic-router-card {
+  margin-top: 18px;
+  padding: 26px 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.basic-router-card h2 {
+  margin: 0 0 10px;
+}
+
+.basic-router-list {
+  margin: 16px 0 0;
+  padding-left: 22px;
+}
+
+.basic-router-list li + li {
+  margin-top: 10px;
+}
